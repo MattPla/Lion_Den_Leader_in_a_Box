@@ -448,7 +448,7 @@ Each adventure module folder contains the full document set for that adventure:
 
 ## About This Project
 
-**Lion Den in a Box** was developed as a Wood Badge Ticket project by **Matthew Pla**, pilot program coordinator, 2024–2025.
+**Lion Den in a Box** was developed as a Wood Badge Ticket project by **Matthew Pla**, pilot program coordinator, 2026–2027.
 
 Wood Badge is the premier leadership development program in the Boy Scouts of America. A ticket is a set of SMART goals a participant commits to completing in service of Scouting after their Wood Badge course. This project represents one of five ticket goals, selected because it addresses a real gap in new leader support at the unit level — and because it has a clear path to scalability beyond the single pack where it was developed.
 
@@ -466,5 +466,5 @@ Questions about the program or pilot? Reach out through the pack or district con
 
 ---
 
-*Lion Den in a Box · Wood Badge Ticket · Matthew Pla · 2024–2025*  
+*Lion Den in a Box · Wood Badge Ticket · Matthew Pla · 2026–2027*  
 *[https://mattpla.github.io/Lion_Den_Leader_in_a_Box/](https://mattpla.github.io/Lion_Den_Leader_in_a_Box/)*
