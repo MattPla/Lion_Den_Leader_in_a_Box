@@ -776,6 +776,245 @@
     .tote-grid { grid-template-columns: repeat(3,1fr); }
     .pilot-metrics { grid-template-columns: 1fr; }
   }
+
+  /* ── TOOLTIP ── */
+  .bin { position: relative; }
+  .bin-tip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    background: #0A1628;
+    border: 1px solid rgba(196,154,42,0.5);
+    border-radius: 4px;
+    padding: 0.9rem 1rem;
+    z-index: 200;
+    pointer-events: none;
+    text-align: left;
+  }
+  .bin-tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(196,154,42,0.5);
+  }
+  .bin:hover .bin-tip { display: block; }
+  .tip-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #E8C56A;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+  .tip-teaches {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+  .tip-saves {
+    font-size: 0.68rem;
+    color: rgba(196,154,42,0.8);
+    line-height: 1.4;
+    padding-top: 0.35rem;
+    border-top: 1px solid rgba(196,154,42,0.2);
+  }
+
+  /* ── IMAGE SLIDER ── */
+  .slider-section {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+    background: #0A1628;
+  }
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    display: flex;
+    align-items: flex-end;
+  }
+  .slide.active { opacity: 1; }
+  .slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.04);
+    transition: transform 6s ease;
+  }
+  .slide.active .slide-bg { transform: scale(1); }
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.3) 55%, rgba(10,22,40,0.1) 100%);
+  }
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem 4rem;
+    max-width: 700px;
+  }
+  .slide-tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #C49A2A;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .slide-tag::before { content: ''; width: 18px; height: 1px; background: #C49A2A; }
+  .slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+  .slide-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  /* IMAGE SPEC COMMENT — shown inline as placeholder label */
+  .slide-bg-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .img-spec {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.05em;
+  }
+  .img-spec-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(196,154,42,0.4);
+  }
+  .slider-controls {
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+    z-index: 10;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .slider-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    padding: 0;
+  }
+  .slider-dot.active { background: #C49A2A; width: 22px; border-radius: 3px; }
+  .slider-arrow {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 2px;
+    transition: all 0.2s;
+    margin-left: 0.5rem;
+  }
+  .slider-arrow:hover { background: rgba(196,154,42,0.2); border-color: rgba(196,154,42,0.5); color: #E8C56A; }
+
+  /* ── VALUE STRIP ── */
+  .value-strip {
+    background: #fff;
+    padding: 4.5rem 3rem;
+    border-bottom: 1px solid rgba(15,31,61,0.08);
+  }
+  .value-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .value-strip-head {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .value-strip-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #0F1F3D;
+    margin-bottom: 0.5rem;
+  }
+  .value-strip-head p {
+    font-size: 0.95rem;
+    color: #777;
+    font-weight: 300;
+  }
+  .value-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .value-card {
+    border: 1px solid rgba(15,31,61,0.1);
+    border-top: 3px solid #C49A2A;
+    padding: 2rem;
+    position: relative;
+    background: #FAF8F3;
+  }
+  .value-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #0F1F3D;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .value-num.counted { opacity: 1; transform: none; }
+  .value-unit {
+    font-size: 1rem;
+    color: #C49A2A;
+    font-weight: 500;
+  }
+  .value-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1B3A6B;
+    margin-bottom: 0.4rem;
+  }
+  .value-desc {
+    font-size: 0.82rem;
+    color: #777;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  @media (max-width: 900px) {
+    .value-cards { grid-template-columns: 1fr; }
+    .slider-section { height: 420px; }
+    .slide-content { padding: 2rem; }
+    .slide-title { font-size: 1.4rem; }
+    .slider-controls { right: 2rem; }
+  }
 </style>
 </head>
 <body>
@@ -809,22 +1048,124 @@
       <div class="tote-diagram">
         <div class="tote-label">The Tote — 13 Adventure Modules</div>
         <div class="tote-grid">
-          <!-- Required -->
-          <div class="bin bin-req"><div class="bin-id">RRB001</div><div class="bin-name">Bobcat</div></div>
-          <div class="bin bin-req"><div class="bin-id">RRF002</div><div class="bin-name">Fun on the Run</div></div>
-          <div class="bin bin-req"><div class="bin-id">RRL003</div><div class="bin-name">Lion's Roar</div></div>
-          <div class="bin bin-req"><div class="bin-id">RLP004</div><div class="bin-name">Lion's Pride</div></div>
-          <div class="bin bin-req"><div class="bin-id">RKJ005</div><div class="bin-name">King of the Jungle</div></div>
-          <div class="bin bin-req"><div class="bin-id">RML006</div><div class="bin-name">Mountain Lion</div></div>
-          <!-- Elective -->
-          <div class="bin bin-elec"><div class="bin-id">EBU007</div><div class="bin-name">Build It Up</div></div>
-          <div class="bin bin-elec"><div class="bin-id">EGG008</div><div class="bin-name">Gizmos & Gadgets</div></div>
-          <div class="bin bin-elec"><div class="bin-id">EGF009</div><div class="bin-name">Go Fish</div></div>
-          <div class="bin bin-elec"><div class="bin-id">ERS010</div><div class="bin-name">Ready Set Grow</div></div>
-          <div class="bin bin-elec"><div class="bin-id">ERR011</div><div class="bin-name">Race Time Lion</div></div>
-          <!-- Target Sports -->
-          <div class="bin bin-sport"><div class="bin-id">OAL012</div><div class="bin-name">Archery Lion</div></div>
-          <div class="bin bin-sport"><div class="bin-id">OSL013</div><div class="bin-name">Slingshot Lion</div></div>
+          <div class="bin bin-req">
+            <div class="bin-id">RRB001</div>
+            <div class="bin-name">Bobcat</div>
+            <div class="bin-tip">
+              <div class="tip-name">Bobcat</div>
+              <div class="tip-teaches">Scout Oath, Law, motto, and the promise every Lion makes on day one.</div>
+              <div class="tip-saves">&#9201; Pre-bagged secret agent cards and activity sheets — zero sourcing, zero laminating.</div>
+            </div>
+          </div>
+          <div class="bin bin-req">
+            <div class="bin-id">RRF002</div>
+            <div class="bin-name">Fun on the Run</div>
+            <div class="bin-tip">
+              <div class="tip-name">Fun on the Run</div>
+              <div class="tip-teaches">Physical fitness, coordination, and teamwork through active outdoor play.</div>
+              <div class="tip-saves">&#9201; A complete 4-station agility circuit. Set it up in 3 minutes, not 30.</div>
+            </div>
+          </div>
+          <div class="bin bin-req">
+            <div class="bin-id">RRL003</div>
+            <div class="bin-name">Lion's Roar</div>
+            <div class="bin-tip">
+              <div class="tip-name">Lion's Roar</div>
+              <div class="tip-teaches">Community safety: 911 calls, Stop Drop and Roll, emergency response basics.</div>
+              <div class="tip-saves">&#9201; Roleplay scripts and scenario cards already written — leaders just facilitate.</div>
+            </div>
+          </div>
+          <div class="bin bin-req">
+            <div class="bin-id">RLP004</div>
+            <div class="bin-name">Lion's Pride</div>
+            <div class="bin-tip">
+              <div class="tip-name">Lion's Pride</div>
+              <div class="tip-teaches">Family heritage, identity, and what makes each Scout family unique.</div>
+              <div class="tip-saves">&#9201; Brown paper roll, pre-cut leaf shapes, markers — full family tree in a bag.</div>
+            </div>
+          </div>
+          <div class="bin bin-req">
+            <div class="bin-id">RKJ005</div>
+            <div class="bin-name">King of the Jungle</div>
+            <div class="bin-tip">
+              <div class="tip-name">King of the Jungle</div>
+              <div class="tip-teaches">Character, citizenship, and pride in community through creative expression.</div>
+              <div class="tip-saves">&#9201; Shield templates and flag materials pre-counted for 20 — ready to open and go.</div>
+            </div>
+          </div>
+          <div class="bin bin-req">
+            <div class="bin-id">RML006</div>
+            <div class="bin-name">Mountain Lion</div>
+            <div class="bin-tip">
+              <div class="tip-name">Mountain Lion</div>
+              <div class="tip-teaches">Nature observation, living things, and environmental awareness.</div>
+              <div class="tip-saves">&#9201; Plot layout guide, observation sheets, and magnifiers — micro-hike in a bin.</div>
+            </div>
+          </div>
+          <div class="bin bin-elec">
+            <div class="bin-id">EBU007</div>
+            <div class="bin-name">Build It Up</div>
+            <div class="bin-tip">
+              <div class="tip-name">Build It Up</div>
+              <div class="tip-teaches">Engineering thinking: design, build, test, and learn from failure.</div>
+              <div class="tip-saves">&#9201; Tower construction kit with wrecking ball — highest engagement per prep minute.</div>
+            </div>
+          </div>
+          <div class="bin bin-elec">
+            <div class="bin-id">EGG008</div>
+            <div class="bin-name">Gizmos & Gadgets</div>
+            <div class="bin-tip">
+              <div class="tip-name">Gizmos & Gadgets</div>
+              <div class="tip-teaches">Basic physics and STEM concepts through hands-on rocket balloon builds.</div>
+              <div class="tip-saves">&#9201; Fishing line tracks and balloon kits pre-measured — no scissors, no measuring.</div>
+            </div>
+          </div>
+          <div class="bin bin-elec">
+            <div class="bin-id">EGF009</div>
+            <div class="bin-name">Go Fish</div>
+            <div class="bin-tip">
+              <div class="tip-name">Go Fish</div>
+              <div class="tip-teaches">Patience, observation, and outdoor recreation skills before a real fishing trip.</div>
+              <div class="tip-saves">&#9201; Magnetic fishing game for indoor practice — stormy Monday? No problem.</div>
+            </div>
+          </div>
+          <div class="bin bin-elec">
+            <div class="bin-id">ERS010</div>
+            <div class="bin-name">Ready Set Grow</div>
+            <div class="bin-tip">
+              <div class="tip-name">Ready Set Grow</div>
+              <div class="tip-teaches">Plant life cycles, soil science, and caring for living things.</div>
+              <div class="tip-saves">&#9201; Worm hotel jar supplies pre-kitted — a complete science lab in one bin.</div>
+            </div>
+          </div>
+          <div class="bin bin-elec">
+            <div class="bin-id">ERR011</div>
+            <div class="bin-name">Race Time Lion</div>
+            <div class="bin-tip">
+              <div class="tip-name">Race Time Lion</div>
+              <div class="tip-teaches">Physics of motion, engineering iteration, and Pinewood Derby pride.</div>
+              <div class="tip-saves">&#9201; Car detailing supplies and a pre-built wheel-spin leaderboard sheet included.</div>
+            </div>
+          </div>
+          <div class="bin bin-sport">
+            <div class="bin-id">OAL012</div>
+            <div class="bin-name">Archery Lion</div>
+            <div class="bin-tip">
+              <div class="tip-name">Archery Lion</div>
+              <div class="tip-teaches">Range safety, focus, and target sport fundamentals.</div>
+              <div class="tip-saves">&#9201; RSO coordination checklist and safety scripts pre-written — site gear provided.</div>
+            </div>
+          </div>
+          <div class="bin bin-sport">
+            <div class="bin-id">OSL013</div>
+            <div class="bin-name">Slingshot Lion</div>
+            <div class="bin-tip">
+              <div class="tip-name">Slingshot Lion</div>
+              <div class="tip-teaches">Target accuracy, discipline, and responsible equipment handling.</div>
+              <div class="tip-saves">&#9201; Full safety protocol card and RSO briefing guide — nothing for the leader to source.</div>
+            </div>
+          </div>
+        </div>
         </div>
         <div class="tote-legend">
           <div class="legend-item"><div class="legend-dot" style="background:rgba(46,95,163,0.7)"></div>Required (6)</div>
@@ -835,6 +1176,93 @@
     </div>
   </div>
 </section>
+
+
+<!-- ── IMAGE SLIDER ── -->
+<!-- IMAGE SPECS:
+     All slides: 1400 x 700px JPG (16:9 wide cinematic ratio)
+     Slide 1: Tote open at 3/4 angle, bins visible, clean surface — product shot
+     Slide 2: One bin open with contents spread neatly on a table — detail shot
+     Slide 3: A den meeting in action — leader and kids engaged at a table
+     Slide 4: QR panel inside tote lid, close-up — operational detail shot
+     How to add: replace the background-color on each .slide-bg with:
+       background-image: url('your-image-filename.jpg')
+     Upload images to your GitHub repo alongside index.html
+-->
+<div class="slider-section" id="showcase">
+  <div class="slide active">
+    <div class="slide-bg" style="background-color:#0D1F3C;">
+      <div class="slide-bg-placeholder">
+        <div class="img-spec-title">Slide 1 — Product Shot</div>
+        <div class="img-spec">1400 × 700px · JPG</div>
+        <div class="img-spec">Tote open at 3/4 angle, all 13 bins visible</div>
+        <div class="img-spec">Replace background-color with background-image: url('slide1.jpg')</div>
+      </div>
+    </div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">Everything in one place</div>
+      <div class="slide-title">13 modules. One tote.<br>Pick it up and go.</div>
+      <div class="slide-desc">Every adventure pre-loaded, pre-counted, pre-labeled. Leaders check it out at their convenience — no Sunday night scramble, no Monday morning supply run.</div>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="slide-bg" style="background-color:#101828;">
+      <div class="slide-bg-placeholder">
+        <div class="img-spec-title">Slide 2 — Detail Shot</div>
+        <div class="img-spec">1400 × 700px · JPG</div>
+        <div class="img-spec">One bin open, contents spread neatly on a table</div>
+        <div class="img-spec">Replace background-color with background-image: url('slide2.jpg')</div>
+      </div>
+    </div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">Pre-counted. Pre-bagged. Ready.</div>
+      <div class="slide-title">Open the bin.<br>Run the meeting.</div>
+      <div class="slide-desc">Every consumable counted for 20 Scouts. A laminated Quick Start Sheet and QR cards already inside the lid. There is nothing left to source, nothing left to guess.</div>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="slide-bg" style="background-color:#0A1A10;">
+      <div class="slide-bg-placeholder">
+        <div class="img-spec-title">Slide 3 — In-Use Shot</div>
+        <div class="img-spec">1400 × 700px · JPG</div>
+        <div class="img-spec">Den meeting in action — leader and Scouts engaged, warm light</div>
+        <div class="img-spec">Replace background-color with background-image: url('slide3.jpg')</div>
+      </div>
+    </div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">What it looks like when it works</div>
+      <div class="slide-title">A leader who is present,<br>not scrambling.</div>
+      <div class="slide-desc">When the materials are already handled, the leader's entire focus goes to the kids in front of them. That is what great den meetings are made of.</div>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="slide-bg" style="background-color:#1A1208;">
+      <div class="slide-bg-placeholder">
+        <div class="img-spec-title">Slide 4 — Operational Detail</div>
+        <div class="img-spec">1400 × 700px · JPG</div>
+        <div class="img-spec">QR survey panel inside tote lid — close-up, sharp focus</div>
+        <div class="img-spec">Replace background-color with background-image: url('slide4.jpg')</div>
+      </div>
+    </div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">Data after every meeting</div>
+      <div class="slide-title">Two minutes. Three QR codes.<br>Real outcome data.</div>
+      <div class="slide-desc">The feedback loop is built into the lid. Leaders scan after cleanup. Quartermasters audit before the next checkout. Every meeting generates clean, structured data from day one.</div>
+    </div>
+  </div>
+  <div class="slider-controls">
+    <button class="slider-dot active" data-idx="0" aria-label="Slide 1"></button>
+    <button class="slider-dot" data-idx="1" aria-label="Slide 2"></button>
+    <button class="slider-dot" data-idx="2" aria-label="Slide 3"></button>
+    <button class="slider-dot" data-idx="3" aria-label="Slide 4"></button>
+    <button class="slider-arrow" id="sl-prev" aria-label="Previous">&#8592;</button>
+    <button class="slider-arrow" id="sl-next" aria-label="Next">&#8594;</button>
+  </div>
+</div>
 
 <!-- ── STATS ── -->
 <div class="stats-bar">
@@ -985,6 +1413,33 @@
         <div class="adv-id">OSL013</div>
         <div class="adv-name">Slingshot Lion</div>
         <div class="adv-note">Site-provided hardware. Requires certified RSO and range.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUE STRIP ── -->
+<section class="value-strip">
+  <div class="value-strip-inner">
+    <div class="value-strip-head reveal">
+      <h2>What the system actually changes for a leader.</h2>
+      <p>These are not projections. They are the outcomes the pilot is designed to prove.</p>
+    </div>
+    <div class="value-cards reveal">
+      <div class="value-card">
+        <div class="value-num" data-target="3" data-suffix="min">3<span class="value-unit">min</span></div>
+        <div class="value-label">Average tote checkout time</div>
+        <div class="value-desc">Leaders verify the bin is sealed, grab the tote, and go. No sourcing, no packing, no Sunday afternoon craft store run. The system is already set up before they arrive.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-num" data-target="80" data-suffix="%">80<span class="value-unit">%</span></div>
+        <div class="value-label">Target leader satisfaction score</div>
+        <div class="value-desc">The pilot tracks self-reported confidence and stress after every meeting. The 80% target is not a hope — it is the bar we are measuring against from the first adventure.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-num" data-target="0" data-suffix="">$0<span class="value-unit"> to Council</span></div>
+        <div class="value-label">Cost to Council for the full pilot</div>
+        <div class="value-desc">The pack funds the tote, the supplies, the surveys, and the mentorship program. Every build hour is volunteered. Council gets six adventures of real data at zero cost.</div>
       </div>
     </div>
   </div>
@@ -1213,5 +1668,40 @@
     });
   });
 </script>
+
+<script>
+  // ── SLIDER ──
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.slider-dot');
+  let current = 0;
+  let timer;
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5500);
+  }
+
+  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.idx)));
+  document.getElementById('sl-prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('sl-next').addEventListener('click', () => goTo(current + 1));
+  timer = setInterval(() => goTo(current + 1), 5500);
+
+  // ── COUNTER ANIMATION ──
+  const counters = document.querySelectorAll('.value-num');
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.classList.contains('counted')) {
+        e.target.classList.add('counted');
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObs.observe(c));
+</script>
+
 </body>
 </html>
