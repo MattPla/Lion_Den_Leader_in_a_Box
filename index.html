@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lion Den in a Box — A Ready-to-Run Program System for New Leaders</title>
+<title>Lion Den in a Box</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
@@ -995,6 +995,47 @@
     .slide-title { font-size: 1.4rem; }
     .slider-controls { right: 2rem; }
   }
+
+  /* ── ACCORDION ── */
+  .acc-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 1px solid rgba(196,154,42,0.15);
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: rgba(255,255,255,0.5);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    transition: color 0.2s;
+  }
+  .acc-toggle:hover { color: var(--gold-light); }
+  .acc-toggle .acc-icon { transition: transform 0.3s; font-size: 0.8rem; }
+  .acc-toggle.open .acc-icon { transform: rotate(180deg); }
+  .acc-body { display: none; }
+  .acc-body.open { display: block; }
+  .coming-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: rgba(196,154,42,0.6);
+    background: rgba(196,154,42,0.08);
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
 </style>
 </head>
 <body>
@@ -1022,6 +1063,9 @@
       <div class="hero-actions">
         <a href="#documents" class="btn-primary">View All Documents ↓</a>
         <a href="#system" class="btn-ghost">See How It Works</a>
+      </div>
+      <div style="margin-top:1.8rem; padding:1rem 1.2rem; border-left:2px solid rgba(196,154,42,0.5); background:rgba(196,154,42,0.06);">
+        <p style="font-size:0.82rem; color:rgba(255,255,255,0.65); font-weight:300; line-height:1.6; margin:0;">Built for any new Lion den leader in any Cub Scout pack — check out the tote, follow the guide, run the meeting. No prior Scouting experience required.</p>
       </div>
     </div>
     <div class="hero-visual">
@@ -1220,7 +1264,7 @@
     </div>
     <div class="stat">
       <div class="stat-number">Day 1</div>
-      <div class="stat-label">When a brand new leader can walk in confident and run a great meeting</div>
+      <div class="stat-label">When a brand new leader can walk in confident and run a great meeting <span style="font-size:0.6rem;opacity:0.55;font-style:italic;">(pilot goal)</span></div>
     </div>
     <div class="stat">
       <div class="stat-number">Year 2</div>
@@ -1269,6 +1313,30 @@
     </div>
   </div>
 </section>
+
+<!-- ── SCALE STRIP ── -->
+<div style="background:var(--navy-mid); padding:3rem; border-top:1px solid rgba(196,154,42,0.15); border-bottom:1px solid rgba(196,154,42,0.15);">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div style="font-size:0.7rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem; text-align:center;">Where this goes</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(196,154,42,0.15);">
+      <div style="padding:1.5rem 1.8rem; background:rgba(255,255,255,0.03);">
+        <div style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--gold); letter-spacing:0.1em; margin-bottom:0.5rem;">NOW · STEP 1</div>
+        <div style="font-size:1rem; font-weight:500; color:#fff; margin-bottom:0.5rem;">Single-pack pilot</div>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); font-weight:300; line-height:1.6;">One tote. One den. Twenty Scouts. Six required adventures. Every meeting tracked from day one.</div>
+      </div>
+      <div style="padding:1.5rem 1.8rem; background:rgba(255,255,255,0.05);">
+        <div style="font-family:'DM Mono',monospace; font-size:0.68rem; color:rgba(196,154,42,0.6); letter-spacing:0.1em; margin-bottom:0.5rem;">NEXT · STEP 2</div>
+        <div style="font-size:1rem; font-weight:500; color:rgba(255,255,255,0.8); margin-bottom:0.5rem;">Pack library</div>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); font-weight:300; line-height:1.6;">Multiple dens share one tote set. A shared quartermaster model. Expansion grounded in pilot data.</div>
+      </div>
+      <div style="padding:1.5rem 1.8rem; background:rgba(255,255,255,0.02);">
+        <div style="font-family:'DM Mono',monospace; font-size:0.68rem; color:rgba(196,154,42,0.4); letter-spacing:0.1em; margin-bottom:0.5rem;">HORIZON · STEP 3</div>
+        <div style="font-size:1rem; font-weight:500; color:rgba(255,255,255,0.6); margin-bottom:0.5rem;">District or council model</div>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.35); font-weight:300; line-height:1.6;">Council owns the reusable layer. Packs pay consumables only. Every new den in the district gets the same head start.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ── ADVENTURES ── -->
 <section class="adventures-section" id="adventures">
@@ -1376,12 +1444,12 @@
       </div>
       <div class="value-card">
         <div class="value-num" data-target="80" data-suffix="%">80<span class="value-unit">%</span></div>
-        <div class="value-label">Target leader satisfaction score</div>
+        <div class="value-label">Leader satisfaction <span style="font-size:0.7rem; font-weight:300; color:var(--text-muted);">(pilot goal)</span></div>
         <div class="value-desc">The pilot tracks self-reported confidence and stress after every meeting. The 80% target is not a hope — it is the bar we are measuring against from the first adventure.</div>
       </div>
       <div class="value-card">
         <div class="value-num" data-target="10" data-suffix="min">10<span class="value-unit">min</span></div>
-        <div class="value-label">Average meeting prep time — down from 2+ hours</div>
+        <div class="value-label">Average meeting prep time <span style="font-size:0.7rem; font-weight:300; color:var(--text-muted);">(projected)</span></div>
         <div class="value-desc">Leaders who used to spend a full Sunday afternoon sourcing, cutting, counting, and packing now verify the bin is sealed and walk out the door. The tote does the rest.</div>
       </div>
     </div>
@@ -1399,82 +1467,84 @@
     <div class="docs-categories reveal">
 
       <div class="doc-category">
-        <div class="doc-cat-title">Onboarding & Leadership</div>
+        <div class="doc-cat-title">Onboarding &amp; Leadership</div>
         <ul class="doc-list">
           <li class="doc-item"><a href="https://docs.google.com/document/d/1BFRBRnWC_ep_B6Wa9YbGZoAWSKeeNCT8mtEsuUarl0I/edit" target="_blank" rel="noopener">Leader Onboarding Guide</a></li>
           <li class="doc-item"><a href="https://docs.google.com/document/d/1xky6H19LyYvKujwxoESWqc5DPt9-sidn1vlY1fg57po/edit" target="_blank" rel="noopener">Quick Start — First Meeting</a></li>
           <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Parent Welcome Letter</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Leader Welcome Guide</a></li>
           <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Mentor Onboarding Guide</a></li>
           <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Mentor Contact Card</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">When Things Go Sideways</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">When Things Go Sideways <span class="coming-soon">folder</span></a></li>
         </ul>
       </div>
 
       <div class="doc-category">
-        <div class="doc-cat-title">Operations & Tracking</div>
+        <div class="doc-cat-title">Operations &amp; Tracking</div>
         <ul class="doc-list">
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Tote Master Inventory Checklist</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Post-Meeting Reset Checklist</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Scoutbook Monthly Tasks</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Den Attendance Log</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Lion Den Advancement Tracker</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Consumables Reorder Guide</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">QR Survey System Overview</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Tote Master Inventory Checklist <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Post-Meeting Reset Checklist <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Scoutbook Monthly Tasks <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Lion Den Advancement Tracker <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Consumables Reorder Guide <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">QR Survey System Overview <span class="coming-soon">folder</span></a></li>
         </ul>
       </div>
 
       <div class="doc-category">
-        <div class="doc-cat-title">Planning & Communication</div>
+        <div class="doc-cat-title">Planning &amp; Communication</div>
         <ul class="doc-list">
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Lion Den Year at a Glance</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Adventure Packing Lists</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Key Dates Handout</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Volunteer Roles Signup Sheet</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Meeting Reminder Text Templates</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">First Den Meeting Sign-Up Sheet</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">First Aid &amp; Allergy Reference</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Key Dates Handout <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Volunteer Roles Signup Sheet <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">Meeting Reminder Templates <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1XlsG131xzTL5roMGdnlHE4YuEKfgbrLW" target="_blank" rel="noopener">First Aid &amp; Allergy Reference <span class="coming-soon">folder</span></a></li>
         </ul>
       </div>
 
       <div class="doc-category">
         <div class="doc-cat-title">Required Adventures (1&#8211;6)</div>
         <ul class="doc-list">
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1dtG91Ea_NFl8eSinhVSdlPaC9IZw9qhk" target="_blank" rel="noopener">RRB001 &#8212; Bobcat &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1YYaL-2LNER2g_O7rDVhk5khs-Gytki0K" target="_blank" rel="noopener">RRF002 &#8212; Fun on the Run &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1vxxoNiQ5Zhs9k8OdElqGSRXYAE87K0-H" target="_blank" rel="noopener">RRL003 &#8212; Lion&#8217;s Roar &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1vQzZqb3BTpwrdVqEgPbI1d1nFuMhK2Gc" target="_blank" rel="noopener">RLP004 &#8212; Lion&#8217;s Pride &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/13DiZLKtK2HIaLF_zsPRa5Xoomidqg7vi" target="_blank" rel="noopener">RKJ005 &#8212; King of the Jungle &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1PZ8u-6t3Lii4xBE2GcIOzUo9T519sP_F" target="_blank" rel="noopener">RML006 &#8212; Mountain Lion &#183; Full Module Folder</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1dtG91Ea_NFl8eSinhVSdlPaC9IZw9qhk" target="_blank" rel="noopener">RRB001 &#8212; Bobcat</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1YYaL-2LNER2g_O7rDVhk5khs-Gytki0K" target="_blank" rel="noopener">RRF002 &#8212; Fun on the Run</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1vxxoNiQ5Zhs9k8OdElqGSRXYAE87K0-H" target="_blank" rel="noopener">RRL003 &#8212; Lion&#8217;s Roar</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1vQzZqb3BTpwrdVqEgPbI1d1nFuMhK2Gc" target="_blank" rel="noopener">RLP004 &#8212; Lion&#8217;s Pride</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/13DiZLKtK2HIaLF_zsPRa5Xoomidqg7vi" target="_blank" rel="noopener">RKJ005 &#8212; King of the Jungle</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1PZ8u-6t3Lii4xBE2GcIOzUo9T519sP_F" target="_blank" rel="noopener">RML006 &#8212; Mountain Lion</a></li>
         </ul>
       </div>
 
       <div class="doc-category">
-        <div class="doc-cat-title">Elective Adventures (7&#8211;20)</div>
+        <div class="doc-cat-title">Elective &amp; Target Sport Adventures</div>
         <ul class="doc-list">
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1rmd90VCZQd16rQvtd_tgEWlYRdNuk4jK" target="_blank" rel="noopener">EBU007 &#8212; Build It Up &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1zU8F7zhiLy4TkSVT308tPG9fm6-IyXFe" target="_blank" rel="noopener">EGG008 &#8212; Gizmos &amp; Gadgets &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/13EaKTiXbT0GpOk_Q7VUeFo4wg1mC4yMO" target="_blank" rel="noopener">EGF009 &#8212; Go Fish &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1hrcRfKklNIbKjFs7GTinQfOoOtxP9Mno" target="_blank" rel="noopener">ERS010 &#8212; Ready, Set, Grow &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1iZUkQtJwGy6zLXz8Z9YTo4kqO8rFzFtX" target="_blank" rel="noopener">ERR011 &#8212; Race Time Lion &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1N6HajPjYRUzfUogaGPYUugNfEiZ9rcfJ" target="_blank" rel="noopener">EIM014 &#8212; I&#8217;ll Do It Myself &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1b33iV60kYjBKKkcX4UjwAnII5BXgRlwn" target="_blank" rel="noopener">EPP015 &#8212; Pick My Path &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1BpMb0f6sgqAQO7Hqe-9QvMaYYJNQmflc" target="_blank" rel="noopener">EOY016 &#8212; On Your Mark &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/11ZKALSolphHNQqcwjRHzPcMHtNEZtP1m" target="_blank" rel="noopener">ECM017 &#8212; Count On Me &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1qZcYXu-bb2C88c-M0VsrBGEr0PLfNMXL" target="_blank" rel="noopener">ECN018 &#8212; Champions for Nature &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1HPN_nZsbnsV3QOWYGtY07xRuBoa7BPDh" target="_blank" rel="noopener">ELC019 &#8212; Let&#8217;s Camp! Lion &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1IGay5cXvsZ8gKNT6Jr_CLnx_okDVM81c" target="_blank" rel="noopener">ERJ020 &#8212; Rumble in the Jungle &#183; Full Module Folder</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1rmd90VCZQd16rQvtd_tgEWlYRdNuk4jK" target="_blank" rel="noopener">EBU007 &#8212; Build It Up</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1zU8F7zhiLy4TkSVT308tPG9fm6-IyXFe" target="_blank" rel="noopener">EGG008 &#8212; Gizmos &amp; Gadgets</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/13EaKTiXbT0GpOk_Q7VUeFo4wg1mC4yMO" target="_blank" rel="noopener">EGF009 &#8212; Go Fish</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1hrcRfKklNIbKjFs7GTinQfOoOtxP9Mno" target="_blank" rel="noopener">ERS010 &#8212; Ready, Set, Grow</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1iZUkQtJwGy6zLXz8Z9YTo4kqO8rFzFtX" target="_blank" rel="noopener">ERR011 &#8212; Race Time Lion</a></li>
         </ul>
+        <button class="acc-toggle" onclick="toggleAcc(this)" aria-expanded="false">
+          Show all electives (7 more) <span class="acc-icon">&#8964;</span>
+        </button>
+        <div class="acc-body">
+          <ul class="doc-list" style="margin-top:0.4rem;">
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/1N6HajPjYRUzfUogaGPYUugNfEiZ9rcfJ" target="_blank" rel="noopener">EIM014 &#8212; I&#8217;ll Do It Myself</a></li>
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/1b33iV60kYjBKKkcX4UjwAnII5BXgRlwn" target="_blank" rel="noopener">EPP015 &#8212; Pick My Path</a></li>
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/1BpMb0f6sgqAQO7Hqe-9QvMaYYJNQmflc" target="_blank" rel="noopener">EOY016 &#8212; On Your Mark</a></li>
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/11ZKALSolphHNQqcwjRHzPcMHtNEZtP1m" target="_blank" rel="noopener">ECM017 &#8212; Count On Me</a></li>
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/1qZcYXu-bb2C88c-M0VsrBGEr0PLfNMXL" target="_blank" rel="noopener">ECN018 &#8212; Champions for Nature</a></li>
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/1HPN_nZsbnsV3QOWYGtY07xRuBoa7BPDh" target="_blank" rel="noopener">ELC019 &#8212; Let&#8217;s Camp! Lion</a></li>
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/1IGay5cXvsZ8gKNT6Jr_CLnx_okDVM81c" target="_blank" rel="noopener">ERJ020 &#8212; Rumble in the Jungle</a></li>
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/1LANmOAUke_es2CQfYbRj89sls5zkV6xx" target="_blank" rel="noopener">OAL012 &#8212; Archery Lion</a></li>
+            <li class="doc-item"><a href="https://drive.google.com/drive/folders/1iQNyfqlQ7_ESTvLlcZBeYkPb_VlmiRIW" target="_blank" rel="noopener">OSL013 &#8212; Slingshot Lion</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="doc-category">
-        <div class="doc-cat-title">Target Sports &amp; Ticket Docs</div>
+        <div class="doc-cat-title">Ticket &amp; Proposal Docs</div>
         <ul class="doc-list">
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1LANmOAUke_es2CQfYbRj89sls5zkV6xx" target="_blank" rel="noopener">OAL012 &#8212; Archery Lion &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1iQNyfqlQ7_ESTvLlcZBeYkPb_VlmiRIW" target="_blank" rel="noopener">OSL013 &#8212; Slingshot Lion &#183; Full Module Folder</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1SzVr0Zr2f2tp6Y0FiSlkkgqzjC0v9_78" target="_blank" rel="noopener">Wood Badge Ticket &#8212; Detailed</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1SzVr0Zr2f2tp6Y0FiSlkkgqzjC0v9_78" target="_blank" rel="noopener">Wood Badge Ticket &#8212; Council Briefing</a></li>
-          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1SzVr0Zr2f2tp6Y0FiSlkkgqzjC0v9_78" target="_blank" rel="noopener">Lion Den in a Box &#8212; Full Program Folder</a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1SzVr0Zr2f2tp6Y0FiSlkkgqzjC0v9_78" target="_blank" rel="noopener">Wood Badge Ticket &#8212; Detailed <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1SzVr0Zr2f2tp6Y0FiSlkkgqzjC0v9_78" target="_blank" rel="noopener">Wood Badge Ticket &#8212; Council Briefing <span class="coming-soon">folder</span></a></li>
+          <li class="doc-item"><a href="https://drive.google.com/drive/folders/1SzVr0Zr2f2tp6Y0FiSlkkgqzjC0v9_78" target="_blank" rel="noopener">Full Program Folder &#8212; All Documents</a></li>
         </ul>
       </div>
 
@@ -1646,5 +1716,15 @@
   counters.forEach(c => counterObs.observe(c));
 </script>
 
+
+<script>
+  function toggleAcc(btn) {
+    const body = btn.nextElementSibling;
+    const open = body.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.querySelector('.acc-icon').textContent = open ? '⨯' : '⥤';
+  }
+</script>
 </body>
 </html>
