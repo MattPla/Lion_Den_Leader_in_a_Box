@@ -887,27 +887,7 @@
     font-weight: 300;
     line-height: 1.6;
   }
-  /* IMAGE SPEC COMMENT — shown inline as placeholder label */
-  .slide-bg-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .img-spec {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 0.05em;
-  }
-  .img-spec-title {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: rgba(196,154,42,0.4);
-  }
+
   .slider-controls {
     position: absolute;
     bottom: 2rem;
@@ -1179,26 +1159,10 @@
 
 
 <!-- ── IMAGE SLIDER ── -->
-<!-- IMAGE SPECS:
-     All slides: 1400 x 700px JPG (16:9 wide cinematic ratio)
-     Slide 1: Tote open at 3/4 angle, bins visible, clean surface — product shot
-     Slide 2: One bin open with contents spread neatly on a table — detail shot
-     Slide 3: A den meeting in action — leader and kids engaged at a table
-     Slide 4: QR panel inside tote lid, close-up — operational detail shot
-     How to add: replace the background-color on each .slide-bg with:
-       background-image: url('your-image-filename.jpg')
-     Upload images to your GitHub repo alongside index.html
--->
+
 <div class="slider-section" id="showcase">
   <div class="slide active">
-    <div class="slide-bg" style="background-image: url('slide1.jpg'); background-size: cover; background-position: center;">
-      <div class="slide-bg-placeholder">
-        <div class="img-spec-title">Slide 1 — Product Shot</div>
-        <div class="img-spec">1400 × 700px · JPG</div>
-        <div class="img-spec">Tote open at 3/4 angle, all 13 bins visible</div>
-        <div class="img-spec">Replace background-color with background-image: url('slide1.jpg')</div>
-      </div>
-    </div>
+    <div class="slide-bg" style="background-color:#0D1F3C; background-image:url('slide1.jpg'); background-size:cover; background-position:center;"></div>
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="slide-tag">Everything in one place</div>
@@ -1207,14 +1171,7 @@
     </div>
   </div>
   <div class="slide">
-    <div class="slide-bg" style="background-color:#101828;">
-      <div class="slide-bg-placeholder">
-        <div class="img-spec-title">Slide 2 — Detail Shot</div>
-        <div class="img-spec">1400 × 700px · JPG</div>
-        <div class="img-spec">One bin open, contents spread neatly on a table</div>
-        <div class="img-spec">Replace background-color with background-image: url('slide2.jpg')</div>
-      </div>
-    </div>
+    <div class="slide-bg" style="background-color:#101828; background-image:url('slide2.jpg'); background-size:cover; background-position:center;"></div>
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="slide-tag">Pre-counted. Pre-bagged. Ready.</div>
@@ -1223,14 +1180,7 @@
     </div>
   </div>
   <div class="slide">
-    <div class="slide-bg" style="background-color:#0A1A10;">
-      <div class="slide-bg-placeholder">
-        <div class="img-spec-title">Slide 3 — In-Use Shot</div>
-        <div class="img-spec">1400 × 700px · JPG</div>
-        <div class="img-spec">Den meeting in action — leader and Scouts engaged, warm light</div>
-        <div class="img-spec">Replace background-color with background-image: url('slide3.jpg')</div>
-      </div>
-    </div>
+    <div class="slide-bg" style="background-color:#0A1A10; background-image:url('slide3.jpg'); background-size:cover; background-position:center;"></div>
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="slide-tag">What it looks like when it works</div>
@@ -1239,14 +1189,7 @@
     </div>
   </div>
   <div class="slide">
-    <div class="slide-bg" style="background-color:#1A1208;">
-      <div class="slide-bg-placeholder">
-        <div class="img-spec-title">Slide 4 — Operational Detail</div>
-        <div class="img-spec">1400 × 700px · JPG</div>
-        <div class="img-spec">QR survey panel inside tote lid — close-up, sharp focus</div>
-        <div class="img-spec">Replace background-color with background-image: url('slide4.jpg')</div>
-      </div>
-    </div>
+    <div class="slide-bg" style="background-color:#1A1208; background-image:url('slide4.jpg'); background-size:cover; background-position:center;"></div>
     <div class="slide-overlay"></div>
     <div class="slide-content">
       <div class="slide-tag">Data after every meeting</div>
