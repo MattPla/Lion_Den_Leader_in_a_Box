@@ -1043,7 +1043,7 @@
   }
 
   /* ── SAMPLES SECTION ── */
-  .samples-section { background: var(--white); }
+  .samples-section { background: var(--white); position: relative; z-index: 0; isolation: isolate; }
 
   .samples-layout {
     display: grid;
@@ -1055,8 +1055,6 @@
 
   /* Left nav rail */
   .samples-nav {
-    position: sticky;
-    top: 80px;
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -2357,7 +2355,7 @@
     <div class="samples-layout reveal">
 
       <!-- Nav rail -->
-      <nav class="samples-nav" aria-label="Document samples">
+      <div class="samples-nav" aria-label="Document samples">
         <button class="samples-nav-item active" onclick="showSample('dlg', this)" aria-pressed="true">
           <span class="nav-item-badge">DLG</span>
           <span class="nav-item-text">
@@ -2379,28 +2377,7 @@
             <span class="nav-item-desc">Pre-printed checklist to verify every item before and after checkout</span>
           </span>
         </button>
-        <button class="samples-nav-item" onclick="showSample('guide', this)">
-          <span class="nav-item-badge">GUIDE</span>
-          <span class="nav-item-text">
-            <span class="nav-item-name">Leader Welcome Guide</span>
-            <span class="nav-item-desc">Orientation document — the first thing a new leader reads</span>
-          </span>
-        </button>
-        <button class="samples-nav-item" onclick="showSample('card', this)">
-          <span class="nav-item-badge">CARD</span>
-          <span class="nav-item-text">
-            <span class="nav-item-name">Reference Cards</span>
-            <span class="nav-item-desc">Fast-access flip cards for first aid, allergy alerts, and when-things-go-sideways guidance</span>
-          </span>
-        </button>
-        <button class="samples-nav-item" onclick="showSample('poster', this)">
-          <span class="nav-item-badge">POST</span>
-          <span class="nav-item-text">
-            <span class="nav-item-name">Adventure Poster</span>
-            <span class="nav-item-desc">Visual anchor for the meeting — shows Scouts what adventure they're starting</span>
-          </span>
-        </button>
-      </nav>
+      </div>
 
       <!-- Stage -->
       <div class="samples-stage">
@@ -2661,163 +2638,6 @@
               <div class="sample-meta-desc">Leaders check items before the meeting and note what was used. The coordinator uses it to restock before the next checkout. Every bin always leaves full — no surprises on meeting night.</div>
             </div>
             <div class="sample-meta-badge">One per module bin</div>
-          </div>
-        </div>
-
-        <!-- LEADER WELCOME GUIDE -->
-        <div class="sample-panel" id="sp-guide">
-          <div class="doc-preview-frame">
-            <div class="doc-preview-topbar">
-              <span class="doc-preview-label">GUIDE · Leader Welcome Guide — Lion Den</span>
-              <span class="doc-preview-type guide">Leader Support</span>
-            </div>
-            <div class="doc-mock">
-              <div class="mock-guide-banner">
-                <div class="mock-guide-label">Lion Den in a Box</div>
-                <div class="mock-guide-title">Welcome to<br>Lion Den Leadership</div>
-                <div class="mock-guide-sub">You don't have to know everything. The box does the heavy lifting. This guide shows you the rest.</div>
-              </div>
-
-              <div class="mock-section-label" style="margin-top:0.5rem;">What's in this guide</div>
-              <div class="mock-toc-row">
-                <span class="mock-toc-num">01</span>
-                <span class="mock-toc-name">What you actually signed up for</span>
-                <span class="mock-toc-page">p. 2</span>
-              </div>
-              <div class="mock-toc-row">
-                <span class="mock-toc-num">02</span>
-                <span class="mock-toc-name">How the tote works</span>
-                <span class="mock-toc-page">p. 3</span>
-              </div>
-              <div class="mock-toc-row">
-                <span class="mock-toc-num">03</span>
-                <span class="mock-toc-name">Before your first meeting</span>
-                <span class="mock-toc-page">p. 4</span>
-              </div>
-              <div class="mock-toc-row">
-                <span class="mock-toc-num">04</span>
-                <span class="mock-toc-name">Your mentor — how to use them</span>
-                <span class="mock-toc-page">p. 5</span>
-              </div>
-              <div class="mock-toc-row">
-                <span class="mock-toc-num">05</span>
-                <span class="mock-toc-name">Scoutbook basics for Lion dens</span>
-                <span class="mock-toc-page">p. 6</span>
-              </div>
-              <div class="mock-toc-row">
-                <span class="mock-toc-num">06</span>
-                <span class="mock-toc-name">What to do when things go sideways</span>
-                <span class="mock-toc-page">p. 7</span>
-              </div>
-              <div class="mock-toc-row">
-                <span class="mock-toc-num">07</span>
-                <span class="mock-toc-name">Year-at-a-glance calendar</span>
-                <span class="mock-toc-page">p. 8</span>
-              </div>
-              <div class="mock-toc-row" style="border:none;">
-                <span class="mock-toc-num">08</span>
-                <span class="mock-toc-name">Quick contacts and support links</span>
-                <span class="mock-toc-page">p. 9</span>
-              </div>
-            </div>
-          </div>
-          <div class="sample-meta">
-            <div class="sample-meta-text">
-              <div class="sample-meta-title">Leader Welcome Guide — handed to every new leader</div>
-              <div class="sample-meta-desc">Not a policy manual. Not a training document. A warm, plain-language orientation for a parent who has no Scouting background and needs to feel capable before meeting one. Lives in the tote program binder and handed directly to the leader.</div>
-            </div>
-            <div class="sample-meta-badge">In the program binder</div>
-          </div>
-        </div>
-
-        <!-- REFERENCE CARD -->
-        <div class="sample-panel" id="sp-card">
-          <div class="doc-preview-frame">
-            <div class="doc-preview-topbar">
-              <span class="doc-preview-label">CARD · First Aid &amp; Allergy Reference</span>
-              <span class="doc-preview-type card">Reference Card</span>
-            </div>
-            <div class="doc-mock" style="padding:0;">
-              <div class="mock-ref-card">
-                <div class="mock-card-top">
-                  <div class="mock-card-top-title">First Aid &amp; Allergy Quick Reference</div>
-                  <div class="mock-card-top-badge">Keep accessible</div>
-                </div>
-                <div class="mock-card-body">
-                  <div class="mock-section-label" style="margin-top:0;">Respond first</div>
-                  <div class="mock-alert-row red">
-                    <div class="mock-alert-icon">🚨</div>
-                    <div class="mock-alert-content">
-                      <div class="mock-alert-title">Severe allergic reaction / anaphylaxis</div>
-                      <div class="mock-alert-text">Use EpiPen if available. Call 911 immediately. Keep Scout calm and lying down. Do not give food or water. Stay on the line.</div>
-                    </div>
-                  </div>
-                  <div class="mock-alert-row amber">
-                    <div class="mock-alert-icon">⚠️</div>
-                    <div class="mock-alert-content">
-                      <div class="mock-alert-title">Minor cut or scrape</div>
-                      <div class="mock-alert-text">Gloves on. Clean with water. Apply adhesive bandage from first aid kit in tote. Document in incident log.</div>
-                    </div>
-                  </div>
-                  <div class="mock-alert-row blue">
-                    <div class="mock-alert-icon">ℹ️</div>
-                    <div class="mock-alert-content">
-                      <div class="mock-alert-title">Known allergies on file</div>
-                      <div class="mock-alert-text">Check the Parent Information Sheet in the tote binder before any snack activity. Yellow tab = allergy on file.</div>
-                    </div>
-                  </div>
-                  <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
-                    <div style="padding:0.6rem 0.8rem; border:1px solid var(--border); text-align:center; background:var(--cream);">
-                      <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:0.3rem;">Emergency</div>
-                      <div style="font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:700; color:#8B1A1A;">911</div>
-                    </div>
-                    <div style="padding:0.6rem 0.8rem; border:1px solid var(--border); text-align:center; background:var(--cream);">
-                      <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:0.3rem;">Mentor</div>
-                      <div style="font-family:'DM Mono',monospace; font-size:0.85rem; color:var(--navy);">See CARD<br>Mentor Contact</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sample-meta">
-            <div class="sample-meta-text">
-              <div class="sample-meta-title">Reference Cards — laminated, mounted in the tote lid</div>
-              <div class="sample-meta-desc">Three cards live in the tote at all times: First Aid &amp; Allergy, Mentor Contact, and When Things Go Sideways. Not hidden in a binder. Mounted where a leader can find them in ten seconds when they need them.</div>
-            </div>
-            <div class="sample-meta-badge">3 cards · Always in tote</div>
-          </div>
-        </div>
-
-        <!-- ADVENTURE POSTER -->
-        <div class="sample-panel" id="sp-poster">
-          <div class="doc-preview-frame">
-            <div class="doc-preview-topbar">
-              <span class="doc-preview-label">POSTER · RRB001 · Adventure in a Box — Bobcat</span>
-              <span class="doc-preview-type poster">Adventure Poster</span>
-            </div>
-            <div class="doc-mock" style="padding:0;">
-              <div class="mock-poster">
-                <div class="mock-poster-lion">🦁</div>
-                <div class="mock-poster-adv">Lion Rank · Required Adventure</div>
-                <div class="mock-poster-title">Adventure<br>in a Box</div>
-                <div class="mock-poster-sub">Tonight you become a Lion Scout. Learn the Scout Oath, earn your Secret Agent Card, and meet your pride.</div>
-                <div class="mock-poster-req-grid">
-                  <div class="mock-poster-req">Scout Oath</div>
-                  <div class="mock-poster-req">Scout Law</div>
-                  <div class="mock-poster-req">Lion Handshake</div>
-                  <div class="mock-poster-req">Secret Agent Card</div>
-                </div>
-                <div style="position:absolute; bottom:1rem; right:1.2rem; font-family:'DM Mono',monospace; font-size:0.55rem; color:rgba(255,255,255,0.2); z-index:1;">RRB001 · Lion Den in a Box</div>
-              </div>
-            </div>
-          </div>
-          <div class="sample-meta">
-            <div class="sample-meta-text">
-              <div class="sample-meta-title">Adventure Poster — one per module bin</div>
-              <div class="sample-meta-desc">Printed on cardstock, rolled in the bin. The leader puts it up at the start of the meeting so Scouts immediately know what adventure they're on. A small thing that makes the moment feel real for a five-year-old.</div>
-            </div>
-            <div class="sample-meta-badge">Cardstock · In every bin</div>
           </div>
         </div>
 
